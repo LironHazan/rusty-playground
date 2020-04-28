@@ -8,6 +8,8 @@ mod borrows;
 use borrows::borrows::imperative_sum;
 mod structs_and_enums;
 use structs_and_enums::use_foo;
+mod markup_lang;
+use markup_lang::start;
 
 fn main() {
 
@@ -25,6 +27,8 @@ fn main() {
     imperative_sum();
 
     use_foo();
+
+    start();
 
     let correct = random::<u8>();
     println!("{}", correct);
