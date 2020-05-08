@@ -10,6 +10,8 @@ mod structs_and_enums;
 use structs_and_enums::use_foo;
 mod markup_lang;
 use markup_lang::start;
+mod trait_obj;
+use trait_obj::call_make_noises;
 
 fn main() {
 
@@ -40,4 +42,6 @@ fn main() {
         }
     }
 
+    // traits practice:
+    call_make_noises();
 }
