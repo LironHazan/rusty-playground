@@ -22,10 +22,22 @@ fn make_noises(animals: Vec<Box<dyn NoisyAnimal>>) {
     }
 }
 
+fn make_noises_with_constraints<T: NoisyAnimal>(animal: T) {
+    println!("{}", animal.make_noise());
+}
+
+
 pub fn call_make_noises() {
+
+    make_noises_with_constraints(Dog{});
+
     let animals: Vec<Box<dyn NoisyAnimal>> = vec![
         Box::new(Dog{}),
         Box::new(Cat{}),
     ];
     make_noises(animals);
 }
+
+
+
+
