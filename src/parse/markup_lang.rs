@@ -1,4 +1,3 @@
-
 #[derive(Copy, Clone)]
 enum State {
     Normal,

@@ -1,34 +1,19 @@
+mod lang_stuff;
+mod parse;
+
 use std::collections::LinkedList;
-mod basics; // filename
-use basics::fib::run_fib_memo;
-use basics::guessgame::get_guess;
-use basics::guessgame::handle_guess;
 use rand::random;
-mod borrows;
-use borrows::borrows::imperative_sum;
-mod structs_and_enums;
-use structs_and_enums::use_foo;
-mod markup_lang;
-use markup_lang::start;
-mod trait_obj;
-use trait_obj::call_make_noises;
+
+use lang_stuff::borrows::borrows::imperative_sum;
+use lang_stuff::io_parse::get_guess;
+use lang_stuff::io_parse::handle_guess;
+use parse::markup_lang::start;
+
+
 
 fn main() {
 
-    let mut ll = LinkedList::new();
-    ll.push_back(1);
-    ll.push_back(2);
-    ll.push_back(3);
-
-    for foo in ll { // LinkedList implements iterator
-        // println!("{}", foo)
-    }
-
-    run_fib_memo();
-
     imperative_sum();
-
-    use_foo();
 
     start();
 
@@ -41,7 +26,4 @@ fn main() {
             break;
         }
     }
-
-    // traits practice:
-    call_make_noises();
 }
